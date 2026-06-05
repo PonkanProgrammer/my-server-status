@@ -2,44 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>接続情報 - Ponkan Server</title>
+    <title>Ponkan Server</title>
     <style>
-        body { font-family: sans-serif; padding: 40px; line-height: 1.6; background-color: #121212; color: #e0e0e0; }
-        .section { margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        .code { background-color: #1e1e1e; color: #bb86fc; padding: 10px; font-family: monospace; border: 1px solid #333; display: block; word-break: break-all; font-weight: bold; }
-        h2 { color: #ffffff; }
-        .version { color: #f48fb1; font-weight: bold; }
-        .rules { color: #cfcfcf; background: #252525; padding: 15px; border-radius: 5px; }
-        a { color: #03dac6; text-decoration: none; }
+        body { font-family: sans-serif; background-color: #121212; color: #e0e0e0; display: flex; justify-content: center; padding: 20px; }
+        .container { max-width: 600px; width: 100%; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
+        .status { font-weight: bold; padding: 5px 10px; border-radius: 5px; display: inline-block; }
+        .online { background: #1b5e20; color: #81c784; }
+        .code { background: #000; padding: 10px; font-family: monospace; border-radius: 5px; color: #bb86fc; margin-top: 10px; word-break: break-all; }
+        h2 { margin-top: 0; color: #fff; }
     </style>
 </head>
 <body>
-    <h1>接続情報</h1>
-    
-    <div class="section">
-        <h2>1. サーバー参加情報</h2>
-        <p>サーバーバージョン: <span class="version">1.12.2</span></p>
-        <p><strong>Eaglercraft (ブラウザ):</strong></p>
-        <p class="code">wss://ab4e-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
-        <p><strong>Java版 (PC版):</strong></p>
-        <p class="code">email-treasure.gl.joinmc.link</p>
-    </div>
+    <div class="container">
+        <h1>Ponkan Server</h1>
 
-    <div class="section">
-        <h2>2. 便利コマンド (JustTpa)</h2>
-        <p>テレポートするときに使ってね：</p>
-        <ul style="color: #bb86fc;">
-            <li><strong>/tpa [名前]</strong> - テレポート申請を送る</li>
-            <li><strong>/tpaccept</strong> - 申請を許可する</li>
-        </ul>
-    </div>
+        <div class="card">
+            <h2>サーバー状況</h2>
+            <div class="status online">● オンライン</div>
+            <p style="font-size: 0.9em; margin-top: 10px;">バージョン: 1.12.2</p>
+        </div>
 
-    <div class="section">
-        <h2>3. サーバーマップ</h2>
-        <p class="code">https://19a8-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
-    </div>
+        <div class="card">
+            <h2>参加用アドレス</h2>
+            <p><strong>Eaglercraft:</strong></p>
+            <div class="code">wss://ab4e-2400-2413-6e40-b200-f84f-265a-d071-ngrok-free.app</div>
+            <p style="margin-top:15px;"><strong>Java版:</strong></p>
+            <div class="code">email-treasure.gl.joinmc.link</div>
+        </div>
 
-    <br>
-    <a href="index.html">← トップに戻る</a>
+        <div class="card">
+            <h2>リンク・マップ</h2>
+            <a href="https://19a8-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app" style="color:#03dac6;">サーバーマップを見る</a>
+        </div>
+        
+        <a href="index.html" style="color: #666;">← 戻る</a>
+    </div>
 </body>
 </html>

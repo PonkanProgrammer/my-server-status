@@ -5,31 +5,41 @@
     <title>接続情報 - Ponkan Server</title>
     <style>
         body { font-family: sans-serif; padding: 40px; line-height: 1.6; background-color: #121212; color: #e0e0e0; }
-        .section { margin-bottom: 30px; }
+        .section { margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
         .code { background-color: #1e1e1e; color: #bb86fc; padding: 10px; font-family: monospace; border: 1px solid #333; display: block; word-break: break-all; font-weight: bold; }
         h2 { color: #ffffff; }
-        a { color: #03dac6; }
+        .version { color: #f48fb1; font-weight: bold; }
+        .rules { color: #cfcfcf; background: #252525; padding: 15px; border-radius: 5px; }
+        a { color: #03dac6; text-decoration: none; }
     </style>
 </head>
 <body>
     <h1>接続情報</h1>
     
     <div class="section">
-        <h2>1. Minecraftサーバーへの参加</h2>
-        <p>以下のいずれかのアドレスを使って参加してください：</p>
+        <h2>1. サーバー参加情報</h2>
+        <p>サーバーバージョン: <span class="version">1.12.2</span></p>
         <p><strong>Eaglercraft (ブラウザ):</strong></p>
         <p class="code">wss://ab4e-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
-        <p><strong>Java版 (PC版クライアント):</strong></p>
+        <p><strong>Java版 (PC版):</strong></p>
         <p class="code">email-treasure.gl.joinmc.link</p>
     </div>
 
     <div class="section">
-        <h2>2. サーバーマップを確認する</h2>
-        <p>ブラウザで以下のURLを開くとマップが見られます：</p>
+        <h2>2. 便利コマンド (JustTpa)</h2>
+        <p>テレポートするときに使ってね：</p>
+        <ul style="color: #bb86fc;">
+            <li><strong>/tpa [名前]</strong> - テレポート申請を送る</li>
+            <li><strong>/tpaccept</strong> - 申請を許可する</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. サーバーマップ</h2>
         <p class="code">https://19a8-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
     </div>
 
     <br>
-    <a href="index.html">トップに戻る</a>
+    <a href="index.html">← トップに戻る</a>
 </body>
 </html>

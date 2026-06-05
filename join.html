@@ -2,28 +2,30 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Ponkan Server Status</title>
+    <title>接続情報 - Ponkan Server</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f0f0f0; padding: 50px; }
-        .card { background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .code { background: #eee; padding: 10px; font-family: monospace; font-weight: bold; }
-        .button { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
+        .section { margin-bottom: 30px; }
+        .code { background: #eee; padding: 10px; font-family: monospace; border: 1px solid #ccc; display: block; word-break: break-all; font-weight: bold; }
+        h2 { color: #333; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>PonkanMC Server Status</h1>
-        <p>現在のサーバー状況: <strong>稼働中</strong></p>
-        
-        <h3>サーバーへの参加方法</h3>
-        <ol style="text-align: left;">
-            <li>Eaglercraftクライアントを開く</li>
-            <li>Multiplayer を選択</li>
-            <li>Add Server をクリック</li>
-            <li>Server Address に以下を入力:</li>
-        </ol>
+    <h1>接続情報</h1>
+    
+    <div class="section">
+        <h2>1. Minecraftサーバーへの参加 (Eaglercraft)</h2>
+        <p>クライアントの「Add Server」に以下を入力してください：</p>
         <p class="code">wss://ab4e-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
-        
-        <br>
-        <a href="https://pixelclient.xyz/" target="_blank" rel="noopener noreferrer">PixelClientを開く</a>
+    </div>
+
+    <div class="section">
+        <h2>2. サーバーマップを確認する</h2>
+        <p>ブラウザで以下のURLを開くとマップが見られます：</p>
+        <p class="code">https://19a8-2400-2413-6e40-b200-f84f-265a-d071-ac85.ngrok-free.app</p>
+    </div>
+
+    <br>
+    <a href="index.html">トップに戻る</a>
+</body>
 </html>

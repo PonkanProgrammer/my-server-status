@@ -1,42 +1,273 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>Ponkan Server</title>
-    <style>
-        body { font-family: sans-serif; background-color: #121212; color: #e0e0e0; display: flex; justify-content: center; padding: 20px; }
-        .container { max-width: 600px; width: 100%; }
-        .card { background: #1e1e1e; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #333; }
-        .status { font-weight: bold; padding: 5px 10px; border-radius: 5px; display: inline-block; }
-        .online { background: #1b5e20; color: #81c784; }
-        .code { background: #000; padding: 10px; font-family: monospace; border-radius: 5px; color: #bb86fc; margin-top: 10px; word-break: break-all; }
-        h2 { margin-top: 0; color: #fff; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponkan Server</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background:
+            radial-gradient(circle at top, #243b55, transparent 35%),
+            linear-gradient(180deg, #0f0f12, #121212);
+        color: #e0e0e0;
+        padding: 24px;
+    }
+
+    .container {
+        max-width: 760px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        color: #aaa;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        background: rgba(30, 30, 30, 0.9);
+        padding: 22px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        border: 1px solid #333;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    h2 {
+        margin-top: 0;
+        color: #fff;
+    }
+
+    .status {
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 999px;
+        display: inline-block;
+    }
+
+    .online {
+        background: #123d1a;
+        color: #8dff9f;
+        border: 1px solid #2f8f46;
+    }
+
+    .code-box {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        background: #050505;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        margin-top: 8px;
+    }
+
+    .code {
+        font-family: monospace;
+        color: #bb86fc;
+        word-break: break-all;
+        flex: 1;
+    }
+
+    button {
+        background: #03dac6;
+        color: #001f1c;
+        border: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        filter: brightness(1.15);
+    }
+
+    .command {
+        background: #0b0b0b;
+        color: #ffd166;
+        padding: 3px 7px;
+        border-radius: 6px;
+        font-family: monospace;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    th, td {
+        border-bottom: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #252525;
+        color: #fff;
+    }
+
+    td {
+        background: #181818;
+    }
+
+    a {
+        color: #03dac6;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .note {
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+
+    .back {
+        color: #888;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 14px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        .code-box {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Ponkan Server</h1>
+<div class="container">
+    <h1>🍊 Ponkan Server</h1>
+    <p class="subtitle">Minecraft Server Info / 参加方法</p>
 
-        <div class="card">
-            <h2>サーバー状況</h2>
-            <div class="status online">● オンライン</div>
-            <p style="font-size: 0.9em; margin-top: 10px;">バージョン: 1.12.2</p>
-        </div>
-
-        <div class="card">
-            <h2>参加用アドレス</h2>
-            <p><strong>Eaglercraft:</strong></p>
-            <div class="code">OFFLINE</div>
-            <p style="margin-top:15px;"><strong>Java版:</strong></p>
-            <div class="code">email-treasure.gl.joinmc.link</div>
-        </div>
-
-        <div class="card">
-            <h2>リンク・マップ</h2>
-            <a href="OFFLINE" style="color:#03dac6;">サーバーマップを見る</a>
-        </div>
-        
-        <a href="index.html" style="color: #666;">← 戻る</a>
+    <div class="card">
+        <h2>サーバー状況</h2>
+        <div class="status online">● オンライン</div>
+        <p class="note">バージョン: 1.12.2</p>
     </div>
+
+    <div class="card">
+        <h2>参加用アドレス</h2>
+
+        <p><strong>Eaglercraft:</strong></p>
+        <div class="code-box">
+            <div class="code" id="eagler">
+                wss://85ce-2400-2413-6e40-b200-414a-4a0a-77da-1f91.ngrok-free.app
+            </div>
+            <button onclick="copyText('eagler')">コピー</button>
+        </div>
+
+        <p style="margin-top:18px;"><strong>Java版:</strong></p>
+        <div class="code-box">
+            <div class="code" id="java">
+                email-treasure.gl.joinmc.link
+            </div>
+            <button onclick="copyText('java')">コピー</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>JustTpa の使い方</h2>
+        <p>
+            JustTpaは、ほかのプレイヤーにテレポート申請を送れるプラグインです。
+            勝手に飛ぶのではなく、相手が許可するとテレポートできます。
+        </p>
+
+        <table>
+            <tr>
+                <th>コマンド</th>
+                <th>意味</th>
+            </tr>
+            <tr>
+                <td><span class="command">/tpa 名前</span></td>
+                <td>相手の場所へ行く申請を送る</td>
+            </tr>
+            <tr>
+                <td><span class="command">/tpahere 名前</span></td>
+                <td>相手を自分の場所へ呼ぶ申請を送る</td>
+            </tr>
+            <tr>
+                <td><span class="command">/tpaccept</span></td>
+                <td>テレポート申請を許可する</td>
+            </tr>
+            <tr>
+                <td><span class="command">/tpadeny</span></td>
+                <td>テレポート申請を断る</td>
+            </tr>
+            <tr>
+                <td><span class="command">/tpacancel</span></td>
+                <td>自分が送った申請をキャンセルする</td>
+            </tr>
+        </table>
+
+        <p class="note">
+            例: ぽんかんの場所へ行きたい場合 → 
+            <span class="command">/tpa Ponkan</span>
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>参加ルール</h2>
+        <ul>
+            <li>荒らし・チートは禁止</li>
+            <li>人の建築物を勝手に壊さない</li>
+            <li>TPAを連打しない</li>
+            <li>みんなで楽しく遊ぶ</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>リンク・マップ</h2>
+        <p>
+            <a href="https://e252-2400-2413-6e40-b200-414a-4a0a-77da-1f91.ngrok-free.app" target="_blank">
+                サーバーマップを見る
+            </a>
+        </p>
+    </div>
+
+    <a class="back" href="index.html">← 戻る</a>
+</div>
+
+<script>
+function copyText(id) {
+    const text = document.getElementById(id).innerText.trim();
+
+    navigator.clipboard.writeText(text).then(() => {
+        alert("コピーしたよ！");
+    }).catch(() => {
+        alert("コピーできませんでした");
+    });
+}
+</script>
+
 </body>
 </html>
